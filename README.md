@@ -240,36 +240,3 @@ top_features = [
 ```
 
 This helps users understand **why** the model made its decision.
-
-### API Endpoints
-
-**POST /api/classify**
-```json
-Request:
-{
-    "text": "Congratulations! You've won a FREE iPhone...",
-    "threshold": 0.8  // optional
-}
-
-Response:
-{
-    "success": true,
-    "spam_probability": 0.95,
-    "ham_probability": 0.05,
-    "is_spam": true,
-    "classification": "SPAM",
-    "top_features": [
-        {"word": "free", "tfidf_score": 0.456},
-        {"word": "won", "tfidf_score": 0.389}
-    ],
-    "text_stats": {...}
-}
-```
-
-**GET /api/health**
-```json
-{
-    "status": "ok",
-    "model": "satyam2025/spam-email-classifier"
-}
-```
